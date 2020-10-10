@@ -121,7 +121,12 @@ def load_data(city, month, day):
 
 
 def time_stats(df, month, day):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel in terms
+    of common month and day of the week.  The program will omit these
+    two calculations if the user inputted a month and/or a day of the
+    week.
+    """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     print('\nIf you inputted a "day" or "month" filter, the program will omit')
