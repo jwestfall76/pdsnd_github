@@ -104,12 +104,10 @@ def load_data(city, month, day):
     raw_response = input('Do you want to see the first five lines of data? (yes or no): ').lower()
     flag = True
     start = 0
-    end = 5
     while flag:
         if raw_response == 'yes':
-            print(df.iloc[start:end])
+            print(df.iloc[start:start+5])
             start += 5
-            end += 5
             raw_response = input('\nDo you want to see another five lines of raw data? (yes or no): ')
         elif raw_response == 'no':
             flag = False
