@@ -1,6 +1,5 @@
 import time
 import pandas as pd
-import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -8,7 +7,6 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 months = ['january', 'february', 'march', 'april', 'may', 'june']
-cities = ['chicago', 'washington', 'new york city']
 
 def get_filters():
     """
@@ -25,7 +23,7 @@ def get_filters():
     flag = True
     while flag:
         city = input('\nPlease enter the city you wish to look at (Chicago, Washington, or New York City): ').lower()
-        for cit in cities:
+        for cit in CITY_DATA:
             if cit == city:
                 flag = False
                 break
@@ -104,12 +102,10 @@ def load_data(city, month, day):
     raw_response = input('Do you want to see the first five lines of data? (yes or no): ').lower()
     flag = True
     start = 0
-    end = 5
     while flag:
         if raw_response == 'yes':
-            print(df.iloc[start:end])
+            print(df.iloc[start:start+5])
             start += 5
-            end += 5
             raw_response = input('\nDo you want to see another five lines of raw data? (yes or no): ')
         elif raw_response == 'no':
             flag = False
