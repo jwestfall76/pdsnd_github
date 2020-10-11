@@ -7,7 +7,6 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 months = ['january', 'february', 'march', 'april', 'may', 'june']
-cities = ['chicago', 'washington', 'new york city']
 
 def get_filters():
     """
@@ -24,7 +23,7 @@ def get_filters():
     flag = True
     while flag:
         city = input('\nPlease enter the city you wish to look at (Chicago, Washington, or New York City): ').lower()
-        for cit in cities:
+        for cit in CITY_DATA:
             if cit == city:
                 flag = False
                 break
